@@ -1,20 +1,37 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import axios from "axios";
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Container } from 'reactstrap';
-  // https://reactstrap.github.io/components/navbar/
 
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from "reactstrap"; // https://reactstrap.github.io/components/navbar/
 
 class Navbar2 extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
     this.state = {
-      username: "pop"
-    }
+      username: "pop",
+      isOpen: false
+    };
     this.logout = this.logout.bind(this);
   }
-
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   // constructor(props) {
   //   super(props);
 
@@ -47,10 +64,7 @@ class Navbar2 extends Component {
       .catch(error => {
         console.log("Logout error");
       });
-  };
-
-
-
+  }
 
   render() {
     const loggedIn = this.props.loggedIn;
@@ -59,97 +73,185 @@ class Navbar2 extends Component {
 
     return (
       <section>
-        <Navbar color="dark" className="text-success text-center clearfix" dark>
-        {/* <Container id="contain"> */}
-          {/* <NavbarBrand href="/" className="mr-auto">Skill-Trade</NavbarBrand> */}
-          {/* <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar> */}
+        {/* <Navbar color="dark" className="text-success text-center clearfix" dark>
+
           <Nav navbar>
-          {loggedIn ? (
+            {loggedIn ? (
               <section className="float-left">
-              <NavItem>
-                <Link
-                  to="#"
-                  id="navText"
-                  onClick={this.logout}
-                >
-                  <span className = "text-success">
-                  Logout
-                  </span>
-                </Link>
+                <NavItem>
+                  <Link to="#" id="navText" onClick={this.logout}>
+                    <span className="text-success">Logout</span>
+                  </Link>
                 </NavItem>
               </section>
             ) : (
               <section className="float-left">
-              <NavItem>
-                <Link to="/">
-                  <span id="navText" className = "text-success">
-                  Skill-Trade Home
-                  </span>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/login">
-                  <span id="navText" className = "text-success">
-                  Login
-                  </span>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/signup">
-                  <span id="navText" className = "text-success">Sign Up</span>
-                </Link>
-                </NavItem>
-              </section>    
-            )}
-          <section className="float-right">
-              <NavItem>
-                <Link to="/browse">
-                  <span id="navText" className = "text-success">Browse</span>
-                </Link>
+                <NavItem>
+                  <Link to="/">
+                    <span id="navText" className="text-success">
+                      Skill-Trade Home
+                    </span>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                <Link to="/topcont" >
-                  <span id="navText" className = "text-success">Top Contributors</span>
-                </Link>
+                  <Link to="/login">
+                    <span id="navText" className="text-success">
+                      Login
+                    </span>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                <Link to="/profile" >
-                  <span id="navText" className = "text-success">Profile</span>
-                </Link>
-                </NavItem>
-                <NavItem>
-                <Link to="/addListing">
-                  <span id="navText" className = "text-success">Add a New Listing</span>
-                </Link>
-                </NavItem>
-                <NavItem>
-                <Link to="/messaging/" >
-                  <span id="navText" className = "text-success">Messages</span>
-                </Link>
+                  <Link to="/signup">
+                    <span id="navText" className="text-success">
+                      Sign Up
+                    </span>
+                  </Link>
                 </NavItem>
               </section>
-              </Nav>
+            )}
+            <section className="float-right">
+              <NavItem>
+                <Link to="/browse">
+                  <span id="navText" className="text-success">
+                    Browse
+                  </span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/topcont">
+                  <span id="navText" className="text-success">
+                    Top Contributors
+                  </span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/profile">
+                  <span id="navText" className="text-success">
+                    Profile
+                  </span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/addListing">
+                  <span id="navText" className="text-success">
+                    Add a New Listing
+                  </span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/messaging/">
+                  <span id="navText" className="text-success">
+                    Messages
+                  </span>
+                </Link>
+              </NavItem>
+            </section>
+          </Nav>
           {/* </Collapse> */}
-          {/* </Container> */}
-        </Navbar>
+        {/* </Container> */}
+        {/* </Navbar> */}
+        <div>
+          <Navbar color="light" light expand="md">
+            <NavbarBrand href="/" id="navText">
+            Skill Trade
+            </NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                {loggedIn ? (
+                  <section className="float-left">
+                    <NavItem>
+                      <NavLink href="#" id="navText" onClick={this.logout}>
+                        {/* <span className="text-success"> */}
+                        Logout
+                        {/* </span> */}
+                      </NavLink>
+                    </NavItem>
+                  </section>
+                ) : (
+                  <section>
+                    <section className="float-left">
+                      <NavItem>
+                        <NavLink href="/login" id="navText">
+                          {/* <span id="navText" className="text-success"> */}
+                            Login
+                          {/* </span> */}
+                        </NavLink>
+                      </NavItem>
+                    </section>
+                    <section className="float-right">
+                      <NavItem>
+                        <NavLink href="/signup" id="navText">
+                          {/* <span id="navText" className="text-success"> */}
+                            Sign Up
+                          {/* </span> */}
+                        </NavLink>
+                      </NavItem>
+                    </section>
+                  </section>
+                )}
+                <UncontrolledDropdown nav inNavbar id="drop">
+                  <DropdownToggle nav caret>
+                    <span id="navText">
+                      Options
+                    </span>
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                  <DropdownItem>
+                  <NavItem>
+                  <NavLink target="_blank" id= "navText" href="https://github.com/groupProject333/SkillTrade2" >
+                    GitHub
+                  </NavLink>
+                </NavItem>
+                </DropdownItem>
+                <DropdownItem divider />
+                    <DropdownItem>
+                      <NavItem>
+                        <NavLink href="/browse" id="navText">
+                          {/* <span id="navText"> */}
+                            Browse
+                          {/* </span> */}
+                        </NavLink>
+                      </NavItem>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavItem>
+                        <NavLink href="/profile" id="navText">
+                          {/* <span id="navText"> */}
+                            Profile
+                          {/* </span> */}
+                        </NavLink>
+                      </NavItem>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavItem>
+                        <NavLink href="/addListing" id="navText">
+                          {/* <span id="navText"> */}
+                            Add a New Listing
+                          {/* </span> */}
+                        </NavLink>
+                      </NavItem>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavItem>
+                        <NavLink href="/messaging/" id="navText">
+                          {/* <span id="navText"> */}
+                            Messages
+                          {/* </span> */}
+                        </NavLink>
+                      </NavItem>
+                    </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>
+                      Reset
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       // <div>
       //   <header>
@@ -195,7 +297,7 @@ class Navbar2 extends Component {
       //             <span id="navText">Sign Up</span>
       //           </Link>
       //           </NavItem>
-      //         </section>    
+      //         </section>
       //       )}
       //     <section className="float-right">
       //         <NavItem>
