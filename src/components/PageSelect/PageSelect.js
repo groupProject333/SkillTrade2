@@ -1,7 +1,7 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
 import "../../App.css";
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink, Container } from 'reactstrap';
 
 
 
@@ -27,7 +27,7 @@ class PageSelect extends React.Component {
 	render() {
 		var pages = [ 'Page 1', 'Page 2', 'Page 3', 'Page4' ];
 		return (
-			<section>
+			<Container id="containPages">
 				<Pagination className="pages">
 					<PaginationItem>
 						<PaginationLink previous href="#" />
@@ -49,7 +49,7 @@ class PageSelect extends React.Component {
 						<PaginationLink next href="#" />
 					</PaginationItem>
 				</Pagination>
-			</section>
+			</Container>
 		);
 	}
 }
