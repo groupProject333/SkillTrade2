@@ -28,6 +28,7 @@ class App extends Component {
 		super();
 		this.state = {
 			loggedIn: false,
+			id: null,
 			username: null
 		};
 
@@ -53,12 +54,14 @@ class App extends Component {
 
 				this.setState({
 					loggedIn: true,
+					id: response.data.user.id,
 					username: response.data.user.username
 				});
 			} else {
 				console.log('Get user: no user');
 				this.setState({
 					loggedIn: false,
+					id: null,
 					username: null
 				});
 			}
