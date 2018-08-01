@@ -1,16 +1,17 @@
 import React from 'react';
 import "./userprofile.css";
 import { Progress, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle } from 'reactstrap';
+    CardTitle, CardSubtitle, CardHeader, Container } from 'reactstrap';
 const UserProfile = (props) => {
     return (
-        <div>
+        <Container>
             <Card>
-                <CardImg top width="100%" src={props.imageLink} alt="Card image cap" />
-                <CardBody>
+            <CardHeader>
                     <CardTitle>{props.firstName} {props.lastName}</CardTitle>
                     <CardSubtitle>{props.location}</CardSubtitle>
-
+                </CardHeader>
+                <CardImg top width="100%" src={props.imageLink} alt="Card image cap" responsice />
+                <CardBody>
                     <CardText>
                         Skills: {props.skills}
                     </CardText>
@@ -22,7 +23,7 @@ const UserProfile = (props) => {
                 </CardBody>
             </Card>
         
-        </div>
+        </Container>
     );
 };
 export default UserProfile;
