@@ -159,7 +159,7 @@ class Navbar2 extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 {loggedIn ? (
-                  <section className="float-left">
+                  <section className="float-left" id="logFormat">
                     <NavItem>
                       <Link to="#" id="navText" onClick={this.logout}>
                         <span>
