@@ -152,7 +152,9 @@ class Navbar2 extends Component {
         {/* </Navbar> */}
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Skill Trade</NavbarBrand>
+            <NavbarBrand id="navText">
+            Skill Trade
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -160,31 +162,35 @@ class Navbar2 extends Component {
                   <section className="float-left">
                     <NavItem>
                       <Link to="#" id="navText" onClick={this.logout}>
-                        <span className="text-success">Logout</span>
+                        <span>
+                          Logout
+                          </span>
                       </Link>
                     </NavItem>
                   </section>
                 ) : (
-                  <section>
-                    <section className="float-left">
+                  <NavItem>
+                  {/* <section> */}
+                    <section className="float-left" id="logFormat">
                       <NavItem>
                         <Link to="/login">
-                          <span id="navText" className="text-success">
+                          <span id="navText">
                             Login
                           </span>
                         </Link>
                       </NavItem>
                     </section>
-                    <section className="float-right">
+                    <section className="float-right" id="logFormat">
                       <NavItem>
                         <Link to="/signup">
-                          <span id="navText" className="text-success">
+                          <span id="navText">
                             Sign Up
                           </span>
                         </Link>
                       </NavItem>
                     </section>
-                  </section>
+                  {/* </section> */}
+                  </NavItem>
                 )}
                 <NavItem>
                   <NavLink
@@ -197,7 +203,7 @@ class Navbar2 extends Component {
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    <span id="navText" className="text-success">
+                    <span id="navText">
                       Options
                     </span>
                   </DropdownToggle>
@@ -205,7 +211,7 @@ class Navbar2 extends Component {
                     <DropdownItem>
                       <NavItem>
                         <Link to="/browse">
-                          <span id="navText" className="text-success">
+                          <span id="navText">
                             Browse
                           </span>
                         </Link>
@@ -214,7 +220,7 @@ class Navbar2 extends Component {
                     <DropdownItem>
                       <NavItem>
                         <Link to="/profile">
-                          <span id="navText" className="text-success">
+                          <span id="navText">
                             Profile
                           </span>
                         </Link>
@@ -223,7 +229,7 @@ class Navbar2 extends Component {
                     <DropdownItem>
                       <NavItem>
                         <Link to="/addListing">
-                          <span id="navText" className="text-success">
+                          <span id="navText">
                             Add a New Listing
                           </span>
                         </Link>
@@ -232,7 +238,7 @@ class Navbar2 extends Component {
                     <DropdownItem>
                       <NavItem>
                         <Link to="/messaging/">
-                          <span id="navText" className="text-success">
+                          <span id="navText">
                             Messages
                           </span>
                         </Link>

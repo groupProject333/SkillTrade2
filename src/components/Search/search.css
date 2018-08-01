@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 
+#back {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5vh;
+}
 #jumboText{
     font-family: 'Righteous', cursive;
-    background-color: lightblue;
+}
+
+#cardBack{
+    background-color: aqua;
     padding: 10vh;
 }
-#contain{
-    padding: 7vh;
-    margin: auto;
-}
+
 #search{
     width: 50vw;
+    margin: auto;
+    text-align: center;
 }
 
 #btn{

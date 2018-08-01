@@ -3,11 +3,8 @@
 
 #navText {
     font-family: 'Righteous', cursive;
-    font-size: 1.5em;
-    display: inline-block;
+    color: limegreen;
 }
 
-#contain {
-    width: 80vw;
-}
+
 
