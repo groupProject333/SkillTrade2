@@ -27,17 +27,54 @@ module.exports = {
             if (error) res.send(error);
         });
     },
-    // createProfile: function(req, res) {
-    //     db.Profile.create({
-    //         userID: req.params.id,
-    //         dateJoined: date,
-    //         karmaChips: 0
-    //     }).then(function(newprofile){
-    //         res.json(newprofile);
-    //     }).catch(function(err) {
-    //         res.json(err);
-    //     });
-    // },
+    addReview: function(req, res) {
+        console.log("profilecontroller line 51");
+        var id = mongoose.Types.ObjectId(req.body.receiverId);
+        console.log(id + "nline 49");
+        db.Review.create(req.body).then(function(dbReview) {
+          console.log(dbReview);
+          console.log(dbReview.receiverId + "Line 57");
+          var id = dbReview.receiverId;
+          // var id = mongoose.Types.ObjectId(dbReview.receiverId)
+          db.User.findByIdAndUpdate(
+            { _id: id },
+            { $push: { review: dbReview._id } },
+            { new: true }
+          )
+          res.send(dbUser)
+          })
+            
+        
+        // db.Profile.findOneAndUpdate({_id: id}, //change when we get user in params
+        // {$push: {
+        //     reviews:
+        //     {
+        //         reviewer: req.body.reviewer,
+        //         rating: req.body.rating,
+        //         message: req.body.message
+        //     }
+        // }})
+    },
+    getReviewBody: function(req, res) {
+        var reviewArray = [];
+        console.log(req.params.id + "!!!!!!!!!!!!!!!!+++");
+        db.User.find({ _id: req.params.id }).then(function(userProfile) {
+            console.log(userProfile)
+            // for(var i =0; i < userProfile[0].review; i++) {
+            //     console.log(review)
+            //     db.Review.findOne({ _id: review})
+            //     .then(function(dbReviews) {
+            //         console.log(dbReviews)
+            //         reviewArray.push(dbReviews);
+            //         }
+                    
+            //     }  
+            db.Review.find({receiverId : req.params.id}).then(function(dbReviews) {
+                res.json(dbReviews)
+            })
+                })
+            
+    },
     updateProfile: function(req, res) {
         console.log("updateProfile function req: " + req);
         console.log(req.body);
