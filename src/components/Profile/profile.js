@@ -215,8 +215,8 @@ toggle() {
 	render() {
 		return (
 			<section>
-                <Container>
-                    <Card body border color="danger">
+            <Container>
+                    <Card body color="info" id="prof">
                         <CardHeader>
                 {/* <h1>_id: {this.props.id}</h1> */}
                 <h1>karma chips : {this.state.karmaChips}</h1>
