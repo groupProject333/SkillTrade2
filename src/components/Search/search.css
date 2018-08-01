@@ -1,19 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 
-#jumboText{
-    font-family: 'Righteous', cursive;
-    background-color: lightblue;
-    padding: 10vh;
-}
-#contain{
-    padding: 7vh;
+#backDiv{
     margin: auto;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+#searchTxt{
+    font-family: 'Righteous', cursive;
+    background-color: turquoise;
+    padding: 5vh;
+    color: white
 }
 #search{
     width: 50vw;
+    margin: auto;
+    text-align: center;
 }
 
 #btn{
     margin-bottom: 2.5vh;
     width: 40vh;
+    background-color: turquoise;
+    border: 1px solid white;
+    color: white;
 }
