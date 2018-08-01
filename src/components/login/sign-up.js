@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Container, Card, CardBody, CardHeader, Form, FormGroup} from 'reactstrap';
+import './style.css';
 
 class Signup extends Component {
 	constructor() {

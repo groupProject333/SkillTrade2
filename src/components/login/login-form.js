@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, Card, CardHeader, CardBody, Container } from 'reactstrap';
+import './style.css';
 
 class LoginForm extends Component {
     constructor() {

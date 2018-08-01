@@ -103,10 +103,10 @@ class App extends Component {
 							/>
 						)}
 					/>
-					<Route
+					{/* <Route
 						path="/userprofile"
 						component={browseProfiles}
-					/>
+					/> */}
 					{/* {this.state.loggedIn && <Route path="/topusers" component={Ranking} />} */}
 					{this.state.loggedIn && <Route path="/addListing" component={addListing} />}
 					{this.state.loggedIn && (
