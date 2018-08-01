@@ -9,6 +9,10 @@ import Navbar2 from './components/Navbar';
 import Home from './components/Home/home';
 import UserProfile from './components/userprofile';
 
+import Home from './components/Home/home';
+
+import UserProfiles from './components/pages/userprofiles';
+import browseProfiles from './components/pages/browseprofiles';
 import Browse from './components/Listing/browse';
 import Profile from './components/Profile/profile';
 // import Ranking from './components/pages/topusers';
@@ -97,6 +101,10 @@ class App extends Component {
 								username={props.match.params.username}
 							/>
 						)}
+					/>
+					<Route
+						path="/userprofile"
+						component={browseProfiles}
 					/>
 					{/* {this.state.loggedIn && <Route path="/topusers" component={Ranking} />} */}
 					{this.state.loggedIn && <Route path="/addListing" component={addListing} />}

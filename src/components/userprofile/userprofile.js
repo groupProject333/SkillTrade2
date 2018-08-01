@@ -2,7 +2,6 @@ import React from 'react';
 import "./userprofile.css";
 import { Progress, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
-
 const UserProfile = (props) => {
     return (
         <div>
@@ -11,6 +10,7 @@ const UserProfile = (props) => {
                 <CardBody>
                     <CardTitle>{props.firstName} {props.lastName}</CardTitle>
                     <CardSubtitle>{props.location}</CardSubtitle>
+
                     <CardText>
                         Skills: {props.skills}
                     </CardText>
@@ -18,13 +18,11 @@ const UserProfile = (props) => {
                         Member since: {props.dateJoined}
                     </CardText>
                     Karma Chips Collected:
-                    <Progress color="failure" value="2">{props.karmaChips}</Progress>
+                    <Progress color="failure" value={props.karmaChips}>{props.karmaChips}</Progress>
                 </CardBody>
             </Card>
-
         
         </div>
     );
 };
-
 export default UserProfile;

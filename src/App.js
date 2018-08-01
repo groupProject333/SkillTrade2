@@ -8,7 +8,6 @@ import LoginForm from './components/login/login-form';
 import Navbar2 from './components/Navbar';
 import Home from './components/Home/home';
 import UserProfile from './components/userprofile';
-
 import Browse from './components/Listing/browse';
 import Profile from './components/Profile';
 //import Ranking from './components/pages/topusers';
@@ -18,6 +17,7 @@ import addListing from './components/Listing/addListing';
 //import Switch from ReactRouter.Switch;
 // import Wrapper from './components/Wrapper';
 import Footer from './components/Footer';
+import './App.css'
 
 class App extends Component {
 	constructor() {

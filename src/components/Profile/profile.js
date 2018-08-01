@@ -6,7 +6,6 @@ import UserProfile from '../userprofile';
 import {Card, CardBody, CardHeader, Container,  Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class Profile extends Component {
-
     
     state = {
         id: this.props.id,
@@ -24,22 +23,11 @@ class Profile extends Component {
         karmaChips: "",
         dateJoined: ""
     };
-
-    // getID() {
-    //   const userID = props =>  (
-    //     props.id
-    //   )
-    //   setState({
-    //     _id: userID
-    //   });
-    // };
-
     componentDidMount() {
-      // this.getID();
+      
         this.loadProfile();
     };
     
-
     getProfile(id, username){
       axios.get("/api/profiles/exist/" + id + "/" + username )
       .then(response => {
@@ -48,8 +36,6 @@ class Profile extends Component {
       })
       .catch(err => console.log(err));
     ;}
-
-
     loadProfile() {
         this.getProfile(this.state.id, this.state.usr);
     };
@@ -94,15 +80,18 @@ class Profile extends Component {
             .catch(err => console.log(err));
     };
     
-	render() {
-		return (
-			<section>
-        <Container>
-            <Card body border color="danger">
-                <CardHeader>
-                <h1>_id: {this.props.id}</h1>
+    render() {
+        return (
+            <section>
+                <Container>
+                    <Card body border color="danger">
+                        <CardHeader>
+                {/* <h1>_id: {this.props.id}</h1>
                 <h1>karma chips : {this.state.karmaChips}</h1>
                 <UserProfile karmaChips={this.state.karmaChips} imageLink={this.state.imageLink} firstName={this.state.firstName} lastName={this.state.lastName} skills={this.state.skills} location={this.state.location} dateJoined={this.state.dateJoined} />
+                <form>
+                    <div className= "form-group">
+                        <label for="firstName" className="form-text"> */}
                 </CardHeader>
                 <CardBody>
                 <Form>
@@ -172,11 +161,8 @@ class Profile extends Component {
                 </CardBody> 
             </Card>
         </Container>
-	</section>
-		);
-	}
+    </section>
+        );
+    }
 };
-
-
-
 export default Profile;
