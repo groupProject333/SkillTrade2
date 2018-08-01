@@ -50,7 +50,7 @@ class Signup extends Component {
 render() {
 	return (
 		<Container>
-		<Card className="SignupForm">
+		<Card className="SignupForm" id="signup">
 		<CardHeader>
 			<h4>Sign up</h4>
 		</CardHeader>
