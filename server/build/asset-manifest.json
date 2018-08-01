@@ -1,14 +1,12 @@
 {
-  "main.css": "static/css/main.b86d273d.css",
-  "main.css.map": "static/css/main.b86d273d.css.map",
-  "main.js": "static/js/main.bc98f844.js",
-  "main.js.map": "static/js/main.bc98f844.js.map",
+  "main.css": "static/css/main.f7cafa20.css",
+  "main.css.map": "static/css/main.f7cafa20.css.map",
+  "main.js": "static/js/main.fccbfda6.js",
+  "main.js.map": "static/js/main.fccbfda6.js.map",
   "static/media/advice.jpg": "static/media/advice.e3ab11cf.jpg",
   "static/media/advice2.jpg": "static/media/advice2.ab997273.jpg",
   "static/media/advice3.jpg": "static/media/advice3.b0fcb30f.jpg",
   "static/media/advice4.jpg": "static/media/advice4.01304d27.jpg",
-  "static/media/clouds.jpg": "static/media/clouds.bc05f07f.jpg",
-  "static/media/logo.png": "static/media/logo.d2e1501e.png",
   "static/media/skill.jpg": "static/media/skill.41711331.jpg",
   "static/media/skill1.jpg": "static/media/skill1.2fc6c1b6.jpg",
   "static/media/skill10.jpg": "static/media/skill10.cb169a58.jpg",
@@ -22,5 +20,7 @@
   "static/media/skill6.jpg": "static/media/skill6.66290886.jpg",
   "static/media/skill7.jpg": "static/media/skill7.a25c0366.jpg",
   "static/media/skill8.jpg": "static/media/skill8.168c4178.jpg",
-  "static/media/skill9.jpg": "static/media/skill9.eb269844.jpg"
+  "static/media/skill9.jpg": "static/media/skill9.eb269844.jpg",
+  "static/media/skilllogo1.png": "static/media/skilllogo1.ff4f0268.png",
+  "static/media/wood.jpg": "static/media/wood.759355f6.jpg"
 }
