@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Container, Card, CardBody, CardHeader, Form, FormGroup} from 'reactstrap';
 
 class Signup extends Component {
 	constructor() {
@@ -48,10 +49,14 @@ class Signup extends Component {
 
 render() {
 	return (
-		<div className="SignupForm">
+		<Container>
+		<Card className="SignupForm">
+		<CardHeader>
 			<h4>Sign up</h4>
-			<form className="form-horizontal">
-				<div className="form-group">
+		</CardHeader>
+		<CardBody>
+			<Form className="form-horizontal">
+				<FormGroup>
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="username">Username</label>
 					</div>
@@ -65,8 +70,8 @@ render() {
 							onChange={this.handleChange}
 						/>
 					</div>
-				</div>
-				<div className="form-group">
+				</FormGroup>
+				<FormGroup>
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="password">Password: </label>
 					</div>
@@ -79,17 +84,19 @@ render() {
 							onChange={this.handleChange}
 						/>
 					</div>
-				</div>
-				<div className="form-group ">
+				</FormGroup>
+				<FormGroup>
 					<div className="col-7"></div>
 					<button
 						className="btn btn-primary col-1 col-mr-auto"
 						onClick={this.handleSubmit}
 						type="submit"
 					>Sign up</button>
-				</div>
-			</form>
-		</div>
+				</FormGroup>
+			</Form>
+			</CardBody>
+		</Card>
+		</Container>
 
 	)
 }
