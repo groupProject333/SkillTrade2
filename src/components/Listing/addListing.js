@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Input, TextArea, FormBtn } from '../Form';
+import {Container, Form} from 'reactstrap'
 import API from '../utils/API';
 
 class Listing extends Component {
@@ -43,8 +44,8 @@ handleInputChange = event => {
 
 	render() {
 		return (
-			<div>
-				<form className="list-container">
+			<Container>
+				<Form className="list-container">
 					<Input
 						className="listing-text"
 					//	value={this.state.title}
@@ -94,8 +95,8 @@ handleInputChange = event => {
 					>
 						Submit Listing
 					</FormBtn>
-				</form>
-			</div>
+				</Form>
+			</Container>
 		);
 	}
 }

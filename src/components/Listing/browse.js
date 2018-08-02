@@ -54,9 +54,8 @@ class Browse extends Component {
 
 	render() {
 		return (
-			<div>
-				<PageSelect />
 				<Container>
+				<PageSelect />
 					<Row>
 						<Col size="md-6 sm-12">
 							{this.state.listings.length ? (
@@ -84,7 +83,6 @@ class Browse extends Component {
 						</Col>
 					</Row>
 				</Container>
-			</div>
 		);
 	}
 }
