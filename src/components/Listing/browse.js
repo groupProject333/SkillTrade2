@@ -9,6 +9,7 @@ import '../../App.js';
 import { List, ListItem } from '../List';
 import { Col, Row, Container } from '../Grid';
 import API from '../utils/API';
+import './style.css'
 
 class Browse extends Component {
 	state = {
@@ -54,7 +55,7 @@ class Browse extends Component {
 
 	render() {
 		return (
-				<Container>
+				<Container is="autoM">
 				<PageSelect />
 					<Row>
 						<Col size="md-6 sm-12">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Input, TextArea, FormBtn } from '../Form';
 import {Container, Form} from 'reactstrap'
 import API from '../utils/API';
+import './style.css'
 
 class Listing extends Component {
 	state = {
@@ -44,7 +45,7 @@ handleInputChange = event => {
 
 	render() {
 		return (
-			<Container>
+			<Container id="autoM">
 				<Form className="list-container">
 					<Input
 						className="listing-text"
